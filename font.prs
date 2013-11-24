@@ -1,0 +1,131 @@
+title	fonttest
+size	300,440
+
+sheet	1
+next	2
+
+line	10 points
+font	Tms Rmn
+point	10
+line	11 points
+point	11
+line	12 points
+point	12
+line	13 points
+point	13
+line	14 points
+point	14
+line	15 points
+point	15
+line	16 points
+point	16
+line	17 points
+point	17
+line	18 points
+point	18
+line	19 points
+point	19
+
+
+sheet	2
+next	3
+
+line	20 points
+point	20
+line	21 points
+point	21
+line	22 points
+point	22
+line	23 points
+point	23
+line	24 points
+point	24
+line	25 points
+point	25
+line	26 points
+point	26
+line	27 points
+point	27
+line	28 points
+point	28
+line	29 points
+point	29
+
+sheet	3
+next	4
+
+line	30 points
+point	30
+line	31 points
+point	31
+line	32 points
+point	32
+line	33 points
+point	33
+line	34 points
+point	34
+line	35 points
+point	35
+line	36 points
+point	36
+line	37 points
+point	37
+line	38 points
+point	38
+line	39 points
+point	39
+
+sheet	4
+next	5
+
+line	40 points
+point	40
+line	41 points
+point	41
+line	42 points
+point	42
+line	43 points
+point	43
+line	44 points
+point	44
+
+sheet	5
+next	6
+
+line	45 points
+point	45
+line	46 points
+point	46
+line	47 points
+point	47
+line	48 points
+point	48
+line	49 points
+point	49
+
+sheet	6
+next	7
+
+line	50 points
+point	50
+line	51 points
+point	51
+line	52 points
+point	52
+line	53 points
+point	53
+line	54 points
+point	54
+
+sheet	7
+
+line	55 points
+point	55
+line	56 points
+point	56
+line	57 points
+point	57
+line	58 points
+point	58
+line	59 points
+point	59

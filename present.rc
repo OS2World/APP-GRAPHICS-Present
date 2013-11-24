@@ -1,0 +1,47 @@
+#include <os2.h>
+#include "present.h"
+
+ICON	ID_APP	present.ico
+POINTER	IDP_PTR	present.ptr
+
+MENU	ID_APP	preload
+{
+	SUBMENU	"~Presentation", ID_NULL
+	{
+		MENUITEM "~Open...",	IDM_OPEN, MIS_TEXT
+		MENUITEM "~Close",	IDM_STOP, MIS_TEXT, MIA_DISABLED
+		MENUITEM SEPARATOR
+		MENUITEM "~About Present!...",	IDM_ABOUT, MIS_TEXT
+	}
+//	MENUITEM "Previous!", IDM_PREV, MIS_TEXT
+	SUBMENU "E~xit", ID_NULL
+	{
+		MENUITEM "Exit Present!",	IDM_EXIT, MIS_TEXT
+		MENUITEM "~Resume", 		ID_NULL,  MIS_TEXT
+	}
+}
+
+DLGTEMPLATE IDD_ABOUT
+     {
+     DIALOG "", 0, 10, 60, 240, 80, FS_DLGBORDER
+	  {
+	  CONTROL ID_APP, ID_NULL, 10, 50, 32, 32, WC_STATIC, SS_ICON | WS_VISIBLE
+	  CTEXT "Present!",			      -1,  40, 60, 160, 10
+	  CTEXT "Sheet presentation system",	      -1,  10, 40, 220, 10
+	  CTEXT "(NC) by the Frobozz Magic Software Company", -1,  10, 30, 220, 10
+	  DEFPUSHBUTTON "OK",		DID_OK,  84,  8,  32, 14, WS_GROUP
+	  }
+     }
+// temp dummy goto
+
+DLGTEMPLATE IDD_GOTO
+     {
+     DIALOG "", 0, 10, 60, 240, 80, FS_DLGBORDER
+	  {
+	  CONTROL ID_APP, ID_NULL, 10, 50, 32, 32, WC_STATIC, SS_ICON | WS_VISIBLE
+	  CTEXT "Present!",			      -1,  40, 60, 160, 10
+	  CTEXT "Sheet presentation system",	      -1,  10, 40, 220, 10
+	  CTEXT "(NC) by the Frobozz Magic Software Company", -1,  10, 30, 220, 10
+	  DEFPUSHBUTTON "OK",		DID_OK,  84,  8,  32, 14, WS_GROUP
+	  }
+     }

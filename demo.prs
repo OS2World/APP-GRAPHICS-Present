@@ -1,0 +1,61 @@
+title	Demo presentation
+size	600,400
+page	exact.bmp
+
+sheet	1
+mode	T
+next	2
+
+line	Welcome to this presentation
+align	C
+font	Helv
+type	BI
+point	24
+colour	darkred
+
+line	A unique piece of freeware
+point	10
+type	B
+
+sheet	2
+mode	B
+next	3
+
+line	What this package can do
+point	40
+colour	black
+
+line	Show presentations
+point	40
+align	L
+
+line	custom backgrounds
+point	24
+
+line	Special effects
+colour	darkred
+fx	SD
+
+line	Multiple fonts
+colour	black
+font	Tms Rmn
+fx	N
+
+line	Colours
+colour	red
+font	Helv
+
+sheet	3
+
+line	The Frobozz Magic Software Company
+font	Tms Rmn
+colour	darkgreen
+point	24
+
+line	gives you
+point	18
+colour	blue
+
+line	Present!
+point	60
+colour	yellow
