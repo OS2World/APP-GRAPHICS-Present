@@ -20,10 +20,8 @@ PRESENT.EXE:  \
      PRESFONT.OBJ
      PRESENT.EXE
      
-     OPENDLG.LIB
-     PRESENT.DEF;
 <<
-   LINK386.EXE /PMTYPE:PM @PRESENT.@0
+   ILINK.EXE /NOFREE /PMTYPE:PM @PRESENT.@0
    RC PRESENT.RES PRESENT.EXE
 
 {.}.rc.res:
@@ -33,4 +31,3 @@ PRESENT.EXE:  \
    ICC.EXE /c /I. /Ss .\$*.c
 
 !include MAKEFILE.DEP
-
