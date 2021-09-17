@@ -24,7 +24,7 @@ static CHAR  *szFacename[FONTFACES] = {
 };
 
 static LONG  alMatch[FONTFACES][FONTSIZES];
-static LONG	 lcidFont = 1L;						// font id dispenser
+static LONG	 lcidFont = 1L;						/* font id dispenser */
 
 
 typedef struct _fl {				/* fl */
@@ -202,7 +202,7 @@ BOOL PresSetFont(HPS hps, PVOID hf)
 	if (GpiSetCharSet(hps, pfl->lcid) == GPI_ERROR) {
 		return FALSE;
 	}
-	if (pfl->fOutline) {			// outline ?
+	if (pfl->fOutline) {			/* outline ? */
 		SIZEF sizf;
 		POINTL ptl;
 		sizf.cx = sizf.cy = MAKEFIXED(pfl->usSize, 0);

@@ -17,6 +17,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <malloc.h>
+#include <libc\ctype.h>
 #include "present.h"
 
 CHAR  szApp[] = "Present!";
@@ -97,7 +98,7 @@ struct _nlin {
 
 
 
-//------------- Keyword defines
+/* ------------- Keyword defines */
 
 #define K_INVALID		256
 
@@ -195,17 +196,17 @@ VOID PresLoadBmp(HPS hpsBmp, PSZ pszFile)
 
 VOID PresAddSheet(PPRES ppr, PSHEET psh)
 {
-	if (psh->usID != 0) {			// new sheet added ??
+	if (psh->usID != 0) {			/* new sheet added ?? */
 		PSHEET pshNew = malloc(sizeof(SHEET));
 		PSHEET *ppsh;
 		*pshNew = *psh;
 		pshNew->pshNext = pshNew->pshPrev = NULL;
 		for (ppsh = &(ppr->pshFirst); *ppsh != NULL; ppsh = &((*ppsh)->pshNext)) {
-			// EMPTY, find last sheet in list
+			/* EMPTY, find last sheet in list */
 		}
 		*ppsh = pshNew;
 
-		// reset edit sheet
+		/* reset edit sheet */
 		psh->pshFollowing = NULL;
 		psh->plFirst = NULL;
 		psh->usID = psh->usNextID = 0;
@@ -244,7 +245,7 @@ VOID SheetAddLine(PSHEET psh, PNLIN pnl)
 		PresSetFont(hps, pl->hf);
 		GpiQueryTextBox(hps, strlen(pl->pszText), pl->pszText, TXTBOX_COUNT, pl->aptl);
 		for (ppl = &(psh->plFirst); *ppl != NULL; ppl = &((*ppl)->plNext)) {
-			// EMPTY, find last slot
+			/* EMPTY, find last slot */
 		}
 		*ppl = pl;
 		pnl->pszText = NULL;
@@ -362,7 +363,7 @@ BOOL LoadPresentation(PSZ pszFile)
 			return FALSE;
 		}
 	}
-	// term active line, term active sheet
+	/* term active line, term active sheet */
 	SheetAddLine(&sheet, &line);
 	PresAddSheet(&pres, &sheet);
 	PresLinkSheets(&pres);
@@ -405,7 +406,7 @@ VOID DrawScreen(HPS hps, PSHEET psh)
 			break;
 		case 'L' :
 			ptl.x = X_MARGIN;
-			if (psh->usMode == 'B') {				// bullet list
+			if (psh->usMode == 'B') {				/* bullet list */
 				POINTL ptlBullet;
 				ULONG ulSize = pl->aptl[TXTBOX_TOPLEFT].y / 3;
 				ptlBullet.x = X_MARGIN + ulSize;
@@ -419,7 +420,7 @@ VOID DrawScreen(HPS hps, PSHEET psh)
 		case 'R' :
 			ptl.x = pres.ptlSize.x - pl->aptl[TXTBOX_BOTTOMRIGHT].x - X_MARGIN;
 			break;
-		case 'P' :		// previous so don't change
+		case 'P' :		/* previous so don't change */
 			break;
 		}
 		ptl.y -= pl->aptl[TXTBOX_TOPLEFT].y * 5 / 4;
@@ -527,7 +528,7 @@ MRESULT EXPENTRY PresWndProc(HWND hwnd, USHORT msg, MPARAM mp1, MPARAM mp2)
 		sizf.cy = MAKEFIXED(200, 0);
 		aptl[0].x = 20;
 		aptl[0].y = 80;
-		GpiSetCharBox(hps, &sizf);			// fix for this screen
+		GpiSetCharBox(hps, &sizf);			/* fix for this screen */
 		GpiCharStringAt(hps, &aptl[0], 8L, "Present!");
 		PresSetFont(hps, PresGetFont(hps, "System Proportional", 10, FATTR_SEL_ITALIC));
 		aptl[0].y -= 24;
@@ -563,7 +564,7 @@ MRESULT EXPENTRY PresWndProc(HWND hwnd, USHORT msg, MPARAM mp1, MPARAM mp2)
 		}
 		break;
 	case WM_SIZE :
-		WinInvalidateRect(hwnd, NULL, FALSE);	// repaint everything
+		WinInvalidateRect(hwnd, NULL, FALSE);	/* repaint everything */
 		break;
 	case WM_USER :
 		if (psh) {
@@ -576,8 +577,8 @@ MRESULT EXPENTRY PresWndProc(HWND hwnd, USHORT msg, MPARAM mp1, MPARAM mp2)
 			psh = WinSendMsg(hwndList, LM_QUERYITEMHANDLE,
 				(MPARAM)WinSendMsg(hwndList, LM_QUERYSELECTION, 0L, 0L),
 				0L);
-			WinSendMsg(hwndList, WM_DESTROY, 0L, 0L);	// drop list
-			WinSendMsg(hwnd, WM_USER, 0L, 0L);	// draw next sheet
+			WinSendMsg(hwndList, WM_DESTROY, 0L, 0L);	/* drop list */
+			WinSendMsg(hwnd, WM_USER, 0L, 0L);	/* draw next sheet */
 		}
 		break;
 	case WM_COMMAND :

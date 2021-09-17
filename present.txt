@@ -1,0 +1,69 @@
+Present!	(NC)Not Copyrighted by the Frobozz Magic Software Company
+
+About the program:
+------------------
+
+Present! is a PM application that allows the user to make simple slide shows
+and display these on the PM desktop.
+The current version is a simple port from my OS/2 1.3 version that I wrote
+two years ago.
+
+Presentation scripts:
+---------------------
+
+Presentations are created using scripts. These script are plain ascii files
+with keywords. A simple example presentation is included with most of the
+allowed words in it. The keywords and their meaning are:
+
+title	- sets the title of the presentation (in the window header)
+size	- sets the size of the the window in pixels
+page	- specifies a bitmap to load as background for the presentation
+
+sheet	- start a sheet. Needs a sheet number
+mode	- sheet mode: T for title sheet, B for bullet sheet
+		(sorry, no others)
+next	- indicates the number of the next sheet
+
+line	- Line of text in a sheet
+align	- alignment of current line, C for centered, L for left, R right
+font	- font family for current line
+point	- point size for font
+type	- typeface: I - italic, B - bold, U - underline, S - strikeout
+		(may be combined)
+colour	- line colour: white, black, blue, red, pink, green, cyan, yellow,
+		darkgray, darkblue, darkred, darkpink, darkgreen, darkcyan,
+		brown, palegray
+fx	- effects to use on line: S - shadow, D - depth
+
+Known bugs:
+-----------
+
+Present! does not correctly handle loading and running a second presentation
+without leaving the application.
+
+Licensing:
+----------
+Feel free to use and enhance this software as you please, but I would like
+to receive a copy of any major changes made.
+
+Changelog
+---------
+2021-09-16
+- Updated makefile and minor changes (comments and an added include) to make the compiler happy.
+
+2021-09-15 
+- Simple recompile of present.exe to remove non available LIB dependecy on ArcaOS and modern OS/2. Recompile by Dave Yeo. 
+- "ilink /NOFREE" fixed the linking and produced a working present.exe. 
+
+1992-04-09 
+- Original release by Paul van Keep
+
+Author
+-------
+Paul van Keep
+Exact Research Labs
+POBox 5066
+2600 GB Delft
+The Netherlands
+e-mail:	75170.1045@compuserve.com
+
